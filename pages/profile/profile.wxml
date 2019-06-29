@@ -1,2 +1,9 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class="container">
+  <view class="user-card">
+    <image class="user-avatar"/>
+    <view class="user-info">
+      <text>David</text>
+    </view>
+  </view>
+</view>
