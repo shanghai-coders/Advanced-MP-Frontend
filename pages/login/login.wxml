@@ -1,0 +1,2 @@
+<!--pages/login/login.wxml-->
+<button open-type="getUserInfo" class="weui-btn weui-btn_plain-default" bindgetuserinfo="bindGetUserInfo">Login</button>
