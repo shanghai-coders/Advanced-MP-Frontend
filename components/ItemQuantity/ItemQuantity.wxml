@@ -1,0 +1,18 @@
+<!--components/ItemQuantity/ItemQuantity.wxml-->
+<view class="quantity-stepper">
+  <block wx:if="{{itemQuantity > 0}}">
+    <view
+      wx:if="{{allowChangeQuantity}}"
+      class="subtract-quantity"
+      data-action="dec"
+      bindtap="updateQuantity"
+    >-</view>
+    <view class="current-quantity">{{ itemQuantity }}</view>
+  </block>
+  <view
+    wx:if="{{allowChangeQuantity}}"
+    class="add-quantity"
+    data-action="inc"
+    bindtap="updateQuantity"
+  >+</view>
+</view>
