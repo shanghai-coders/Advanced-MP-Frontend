@@ -6,7 +6,8 @@ import { request } from '../../utils/wxp'
 
 create(store, {
   data: {
-    products: []
+    products: [],
+    cartItems: []
   },
   async getProducts () {
     const { data } = await request({

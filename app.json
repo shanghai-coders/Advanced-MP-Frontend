@@ -5,6 +5,9 @@
     "pages/cart/cart",
     "pages/login/login"
   ],
+  "usingComponents": {
+    "ItemQuantity": "components/ItemQuantity/ItemQuantity"
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f10215",

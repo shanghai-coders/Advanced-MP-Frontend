@@ -1,4 +1,18 @@
 <!--index.wxml-->
+<wxs module="cart">
+var cartQuantity = function(id, cartItems) {
+  var quantity = 0
+  var foundItem = cartItems.filter(function (item) {
+    return item.id === id
+  })
+  if (foundItem.length) quantity = foundItem[0].quantity
+  return quantity
+}
+module.exports = {
+  cartQuantity: cartQuantity
+}
+</wxs>
+
 <view class="page">
   <view class="weui-panel weui-panel_access">
     <view class="weui-panel__hd">Hot Products</view>
@@ -21,11 +35,10 @@
             <view class="weui-media-box__title">{{ product.name_en }}</view>
             <view class="description-wrapper">
               <view class="product-price">{{ product.price }} RMB</view>
-              <view class="quantity-stepper">
-                <!-- <view class="subtract-quantity">-</view>
-                <view class="current-quantity">0</view> -->
-                <view class="add-quantity">+</view>
-              </view>
+              <ItemQuantity
+                productId="{{product.id}}"
+                cartItems="{{cartItems}}"
+              />
             </view>
           </view>
         </view>
