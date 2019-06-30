@@ -1,18 +1,4 @@
 <!--index.wxml-->
-<wxs module="cart">
-var cartQuantity = function(id, cartItems) {
-  var quantity = 0
-  var foundItem = cartItems.filter(function (item) {
-    return item.id === id
-  })
-  if (foundItem.length) quantity = foundItem[0].quantity
-  return quantity
-}
-module.exports = {
-  cartQuantity: cartQuantity
-}
-</wxs>
-
 <view class="page">
   <view class="weui-panel weui-panel_access">
     <view class="weui-panel__hd">Hot Products</view>
