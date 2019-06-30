@@ -3,7 +3,7 @@
   <view class="page__bd">
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__bd">
-        <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
           <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
             <image class="weui-media-box__thumb" src="{{userData.avatarUrl}}" />
           </view>
@@ -11,7 +11,7 @@
             <view class="weui-media-box__title">{{userData.nickName}}</view>
             <view class="weui-media-box__desc">{{userData.city}}</view>
           </view>
-        </navigator>
+        </view>
       </view>
     </view>
     <view class="weui-panel">
@@ -29,8 +29,12 @@
     </view>
   </view>
 </view>
-<view class="page container" wx:if="{{!loggedIn}}">
-  <view class="page__bd page__bd_spacing">
-    <button class="weui-btn" type="primary" plain="true" open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login              </button>
+<view class="page" wx:if="{{!loggedIn}}">
+  <image class="cat-image" src="../../assets/images/cat.jpg" />
+  <text class="helper-text">Please Log In</text>
+  <view class="container">
+    <view class="page__bd page__bd_spacing">
+      <button class="weui-btn" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">Log In              </button>
+    </view>
   </view>
 </view>
