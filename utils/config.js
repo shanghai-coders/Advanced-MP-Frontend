@@ -1,1 +1,1 @@
-export const apiUrl = 'https://advancemp.serveo.net'
+export const apiUrl = 'https://polar-basin-69824.herokuapp.com'

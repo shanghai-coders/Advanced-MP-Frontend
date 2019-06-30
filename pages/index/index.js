@@ -1,8 +1,10 @@
 //index.js
+import create from '../../utils/create'
+import store from '../../store/index'
 import { apiUrl } from '../../utils/config'
 import { request } from '../../utils/wxp'
 
-Page({
+create(store, {
   data: {
     products: []
   },
