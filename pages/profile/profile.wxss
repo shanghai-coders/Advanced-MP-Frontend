@@ -2,24 +2,3 @@
 .container {
   padding: 20rpx;
 }
-
-.user-card {
-  min-height: 300rpx;
-  background: #fefefe;
-  border-radius: 25rpx;
-  border: 1px solid grey;
-  padding: 20rpx;
-  display: flex;
-  flex-direction: row;
-}
-
-.user-avatar {
-  border: 1px solid grey;
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50%;
-}
-
-.user-info {
-  margin-left: 20rpx;
-}

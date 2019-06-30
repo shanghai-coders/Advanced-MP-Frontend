@@ -1,9 +1,36 @@
-<!--pages/profile/profile.wxml-->
-<view class="container">
-  <view class="user-card">
-    <image class="user-avatar"/>
-    <view class="user-info">
-      <text>David</text>
+<!-- pages/profile/profile.wxml -->
+<view class="page" wx:if="{{loggedIn}}">
+  <view class="page__bd">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{userData.avatarUrl}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{userData.nickName}}</view>
+            <view class="weui-media-box__desc">{{userData.city}}</view>
+          </view>
+        </navigator>
+      </view>
     </view>
+    <view class="weui-panel">
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_small-appmsg">
+          <view class="weui-cells weui-cells_in-small-appmsg">
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+              <view class="weui-cell__bd weui-cell_primary">
+                <view>Language: {{userData.language}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="page container" wx:if="{{!loggedIn}}">
+  <view class="page__bd page__bd_spacing">
+    <button class="weui-btn" type="primary" plain="true" open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login              </button>
   </view>
 </view>

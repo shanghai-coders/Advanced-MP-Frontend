@@ -50,15 +50,8 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": -1,
 			"list": [
-				{
-					"id": 0,
-					"name": "Profile",
-					"pathName": "pages/index/index",
-					"query": "",
-					"scene": null
-				},
 				{
 					"id": -1,
 					"name": "Profile",

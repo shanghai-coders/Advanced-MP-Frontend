@@ -1,14 +1,17 @@
 // store/index.js
 import languageStrings from '../i18n/index'
 import { getStoredOrPhoneLanguage, setStoredLanguage } from '../services/language'
-
+import auth from '../services/auth'
 export default {
   data: {
+    loggedIn: null,
+    userData: {},
     strings: languageStrings,
     language: 'en'
   },
   initStore () {
     this.initLanguage()
+    this.getStoredUserData();
   },
   async initLanguage () {
     const language = await getStoredOrPhoneLanguage()
@@ -35,5 +38,15 @@ export default {
         text: strings[language].tabbar[text]
       })
     })
+  },
+  async getStoredUserData() {
+    const userData = await auth.getUserData();
+    if(userData) {
+      this.update({
+        userData,
+        loggedIn: true
+      });
+      return
+    }
   }
 }
