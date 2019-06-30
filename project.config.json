@@ -20,12 +20,11 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		},
-		"enhance": true
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.2",
-	"appid": "wxe00eaebf77d75505",
+	"appid": "wxc3c8dd24d5a53b8d",
 	"projectname": "Advanced%20MP",
 	"debugOptions": {
 		"hidedInDevtools": []
