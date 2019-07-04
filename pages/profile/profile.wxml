@@ -14,19 +14,19 @@
         </view>
       </view>
     </view>
-    <view class="weui-panel">
+    <!-- <view class="weui-panel">
       <view class="weui-panel__bd">
         <view class="weui-media-box weui-media-box_small-appmsg">
           <view class="weui-cells weui-cells_in-small-appmsg">
             <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
               <view class="weui-cell__bd weui-cell_primary">
-                <view>Language: {{userData.language}}</view>
+                <view>Language: {{language}}</view>
               </view>
             </view>
           </view>
         </view>
       </view>
-    </view>
+    </view> -->
   </view>
 </view>
 <view class="page" wx:if="{{!loggedIn}}">
@@ -34,7 +34,7 @@
   <text class="helper-text">Please Log In</text>
   <view class="container">
     <view class="page__bd page__bd_spacing">
-      <button class="weui-btn" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">Log In              </button>
+      <button class="weui-btn" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">Log In</button>
     </view>
   </view>
 </view>

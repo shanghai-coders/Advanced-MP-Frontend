@@ -9,6 +9,7 @@ create(store, {
     // From store
     loggedIn: null,
     userData: null,
+    language: null,
   },
   onLoad(options) {
   },
