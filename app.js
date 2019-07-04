@@ -6,6 +6,9 @@ App({
     setTimeout(() => {
       store.initStore()
     }, 10)
+    // store.initStore()
   },
-  globalData: {}
+  globalData: {
+    test: 'testing'
+  }
 })
