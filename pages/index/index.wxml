@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="page">
   <view class="weui-panel weui-panel_access">
-    <view class="weui-panel__hd">Hot Products</view>
+    <view class="weui-panel__hd">{{ strings[language].hotProducts }}</view>
     <view class="weui-panel__bd">
       <block
         wx:for="{{products}}"

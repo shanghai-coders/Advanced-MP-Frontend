@@ -6,6 +6,8 @@ import { request } from '../../utils/wxp'
 
 create(store, {
   data: {
+    language: null,
+    strings: null,
     products: [],
     cartItems: []
   },
@@ -16,9 +18,8 @@ create(store, {
     return data
   },
   async onLoad () {
-    wx.showLoading({
-      title: 'Loading...',
-    })
+    await new Promise(resolve => setTimeout(resolve, 10))
+    store.showLoading()
     try {
       this.setData({
         products: await this.getProducts()

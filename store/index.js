@@ -18,7 +18,7 @@ export default {
   },
   async initLanguage () {
     const language = await getStoredOrPhoneLanguage()
-    await this.setLanguage()
+    await this.setLanguage(language)
   },
   async setLanguage (language = 'en') {
     await this.update({ language })
@@ -67,10 +67,15 @@ export default {
         [`cartItems[${insertIndex}]`]: item
       })
     } else {
-      const newCartItems = [...cartItems].filter(i => i.id !== id)
       await this.update({
-        cartItems
+        cartItems: [...cartItems].filter(i => i.id !== id)
       })
     }
+  },
+  async showLoading () {
+    const { language, strings } = this.data
+    wx.showLoading({
+      title: strings[language].loading
+    })
   }
 }
