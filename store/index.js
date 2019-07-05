@@ -6,6 +6,7 @@ export default {
   data: {
     loggedIn: null,
     userData: {},
+    code: null,
     strings: languageStrings,
     language: 'en',
     cartItems: [
@@ -15,6 +16,7 @@ export default {
   initStore () {
     this.initLanguage()
     this.getStoredUserData();
+    this.getCode();
   },
   async initLanguage () {
     const language = await getStoredOrPhoneLanguage()
@@ -50,6 +52,16 @@ export default {
         loggedIn: true
       });
       return
+    }
+  },
+  async getCode() {
+    try {
+      const code = await auth.getCode();
+      this.update({
+        code
+      });
+    } catch(e) {
+      console.log(e);
     }
   },
   async updateQuantity (id, action) {
