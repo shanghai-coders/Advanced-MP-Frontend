@@ -2,7 +2,6 @@ const methods = [
   'getStorage',
   'setStorage',
   'login',
-  'checkSession',
   'getUserInfo',
   'downloadFile',
   'getImageInfo',

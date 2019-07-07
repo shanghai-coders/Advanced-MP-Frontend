@@ -1,15 +1,10 @@
 //index.js
-import create from '../../utils/create'
-import store from '../../store/index'
 import { apiUrl } from '../../utils/config'
 import { request } from '../../utils/wxp'
 
-create(store, {
+Page({
   data: {
-    language: null,
-    strings: null,
-    products: [],
-    cartItems: []
+    products: []
   },
   async getProducts () {
     const { data } = await request({
@@ -18,8 +13,9 @@ create(store, {
     return data
   },
   async onLoad () {
-    await new Promise(resolve => setTimeout(resolve, 10))
-    store.showLoading()
+    wx.showLoading({
+      title: 'Loading...',
+    })
     try {
       this.setData({
         products: await this.getProducts()

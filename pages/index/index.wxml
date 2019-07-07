@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="page">
   <view class="weui-panel weui-panel_access">
-    <view class="weui-panel__hd">{{ strings[language].hotProducts }}</view>
+    <view class="weui-panel__hd">Hot Products</view>
     <view class="weui-panel__bd">
       <block
         wx:for="{{products}}"
@@ -21,10 +21,11 @@
             <view class="weui-media-box__title">{{ product.name_en }}</view>
             <view class="description-wrapper">
               <view class="product-price">{{ product.price }} RMB</view>
-              <ItemQuantity
-                productId="{{product.id}}"
-                cartItems="{{cartItems}}"
-              />
+              <view class="quantity-stepper">
+                <!-- <view class="subtract-quantity">-</view>
+                <view class="current-quantity">0</view> -->
+                <view class="add-quantity">+</view>
+              </view>
             </view>
           </view>
         </view>

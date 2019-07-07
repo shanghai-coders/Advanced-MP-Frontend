@@ -1,75 +1,66 @@
-import create from '../../utils/create';
-import store from '../../store/index';
-import auth from '../../services/auth';
-import wxp from '../../utils/wxp';
-import { apiUrl } from '../../utils/config';
-
 // pages/profile/profile.js
+Page({
 
-create(store, {
+  /**
+   * 页面的初始数据
+   */
   data: {
-    // From store
-    language: null,
-    strings: null,
-    loggedIn: null,
-    userData: null,
-    phoneNumber: '',
-    readableLanguages: {
-      en: "English",
-      zh: "中文"
-    }
-  },
-  onLoad(options) {
-    console.log(store.data)
-  },
-  changeLanguage () {
-    const { language } = this.data
-    const availableLanguages = ['en', 'zh']
-    const newLanguage = availableLanguages.filter(l => l !== language)[0]
-    store.setLanguage(newLanguage)
-  },
-  async getUserInfo({ detail }) {
-    const { userInfo, encryptedData, iv } = detail;
-    if(userInfo) {
-      try {
-        const { code } = store.data;
 
-        await wxp.request({
-          url: `${apiUrl}/wechat/login?code=${code}`, method: 'post', data: {
-            encryptedData,
-            iv
-          }
-        });
-
-        await auth.setUserData(userInfo);
-        console.log(userInfo);
-        this.update({
-          userData: userInfo,
-          loggedIn: true
-        });
-      } catch(e) {
-        console.log(e);
-      }
-    }
   },
-  async getPhoneNumber({ detail }) {
-    const { encryptedData, iv } = detail;
 
-    try {
-      // const { code } = store.data;
-      const { code } = await wxp.login();
-      const { data } = await wxp.request({
-        url: `${apiUrl}/wechat/login?code=${code}`, method: 'post', data: {
-          encryptedData,
-          iv
-        }
-      });
-      this.setData({
-        phoneNumber: data.phoneNumber
-      });
-      
-    } catch(e) {
-      console.log(e);
-    }
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   }
 })

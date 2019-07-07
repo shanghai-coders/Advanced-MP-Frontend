@@ -11,3 +11,26 @@
   color: red;
   font-size: 32rpx;
 }
+
+.quantity-stepper {
+  display: flex;
+  align-items: center;
+}
+.quantity-stepper > view {
+  width: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.quantity-stepper > view:not(:last-child) {
+  margin-right: 15rpx;
+}
+.subtract-quantity, .add-quantity {
+  background: #fff;
+  color: #999;
+  border-radius: 50%;
+  border: solid 1px #ddd;
+  height: 60rpx;
+  line-height: 1;
+}
