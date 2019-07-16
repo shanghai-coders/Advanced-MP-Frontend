@@ -1,2 +1,47 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class="page" wx:if="{{loggedIn}}">
+  <view class="page__bd">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{userData.avatarUrl}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{userData.nickName}}</view>
+            <view class="weui-media-box__desc">{{userData.city}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-panel">
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_small-appmsg">
+          <view class="weui-cells weui-cells_in-small-appmsg">
+            <view class="weui-cell weui-cell_access" bindtap="changeLanguage">
+              <view class="weui-cell__bd weui-cell_primary">
+                <view>Phone Number: {{phoneNumber}}</view>
+              </view>
+              <view class="weui-cell__hd">
+                <button class="weui-btn mini-btn" type="primary" size="mini" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+                  Get
+                </button>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="page" wx:if="{{!loggedIn}}">
+  <image class="cat-image" src="../../assets/images/cat.jpg" />
+  <text class="helper-text">Please Log In</text>
+  <view class="container">
+    <view class="page__bd page__bd_spacing">
+      <button class="weui-btn" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        Log In
+      </button>
+    </view>
+  </view>
+</view>

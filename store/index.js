@@ -1,5 +1,7 @@
 // store/index.js
 
 export default {
-  data: {}
+  data: {
+    loggedIn: null
+  }
 }
