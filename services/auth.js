@@ -2,9 +2,17 @@ import wxp from '../utils/wxp';
 import { apiUrl } from '../utils/config';
 
 export default {
-  async getCode() {
+  async getOpenID() {
     try {
       const { code } = await wxp.login();
+
+      const { data } = await wxp.request({
+        url: `${apiUrl}/wechat/login?code=${code}`,
+        method: 'post'
+      });
+
+      console.log(data);
+
       return code;
     } catch(e) {
       console.log(e);
