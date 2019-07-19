@@ -1,0 +1,8 @@
+/* pages/warehouse.wxss */
+Page {
+  background: #efefef;
+}
+
+.preview-spacing {
+  margin-bottom: 100rpx;
+}

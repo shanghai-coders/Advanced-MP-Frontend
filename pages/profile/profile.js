@@ -34,17 +34,17 @@ create(store, {
       try {
         const { code } = store.data;
 
-        await wxp.request({
+        const { data } = await wxp.request({
           url: `${apiUrl}/wechat/login?code=${code}`, method: 'post', data: {
             encryptedData,
             iv
           }
         });
 
-        await auth.setUserData(userInfo);
-        console.log(userInfo);
+        await auth.setUserData(data);
+        console.log(data);
         this.update({
-          userData: userInfo,
+          userData: data,
           loggedIn: true
         });
       } catch(e) {

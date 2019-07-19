@@ -1,0 +1,27 @@
+<!--pages/warehouse.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view class="weui-panel__hd">{{ strings[language].orderTitle }}</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-form-preview preview-spacing" wx:for="{{orders}}" wx:key="id" wx:for-item="order">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">{{ strings[language].totalPrice }}</view>
+                    <view class="weui-form-preview__value_in-hd">¥{{order.totalPrice}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item" wx:for="{{order.products}}" wx:key="id" wx:for-item="product">
+                    <view class="weui-form-preview__label">{{ strings[language].product }}</view>
+                    <view class="weui-form-preview__value">{{ language === 'en' ? product.name_en :  product.name_zh}} ¥{{product.price}} x {{product.quantity}} </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft">
+              <form bindsubmit="sendNotification" report-submit class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">
+                <button form-type="submit" type="primary" data-order="{{order}}">{{strings[language].sendOrder}}</button>
+              </form>
+            </view>
+        </view>
+    </view>
+</view>

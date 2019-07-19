@@ -7,5 +7,9 @@ export default {
   },
   hotProducts: "Hot Products",
   rmb: "RMB",
-  loading: "Loading..."
+  loading: "Loading...",
+  orderTitle: "Orders",
+  sendOrder: 'Send Order Notice',
+  totalPrice: "Total Price",
+  product: "Product"
 }
