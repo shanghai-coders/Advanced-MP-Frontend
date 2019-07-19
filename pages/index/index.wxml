@@ -18,9 +18,9 @@
             />
           </view>
           <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">{{ product.name_en }}</view>
+            <view class="weui-media-box__title">{{ product['name_' + language] }}</view>
             <view class="description-wrapper">
-              <view class="product-price">{{ product.price }} RMB</view>
+              <view class="product-price">{{ product.price }}{{ strings[language].rmb  }}</view>
               <ItemQuantity
                 productId="{{product.id}}"
                 cartItems="{{cartItems}}"
@@ -32,3 +32,5 @@
     </view>
   </view>
 </view>
+
+<CartButton />
