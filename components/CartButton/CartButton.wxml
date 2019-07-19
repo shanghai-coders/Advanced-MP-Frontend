@@ -1,0 +1,10 @@
+<!--components/CartButton/CartButton.wxml-->
+<view
+  class="button-container"
+  bindtap="tapCartIcon"
+>
+  <image
+    src="/assets/icons/shopping-cart.svg"
+  />
+  <view class="cart-quantity">{{ cartTotalQuantity }}</view>
+</view>

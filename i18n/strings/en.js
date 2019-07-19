@@ -6,6 +6,6 @@ export default {
     cart: "Cart"
   },
   hotProducts: "Hot Products",
-  rmb: "RMB",
+  rmb: " RMB",
   loading: "Loading..."
 }
