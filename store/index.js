@@ -10,7 +10,8 @@ export default {
     strings: languageStrings,
     language: 'en',
     cartItems: [
-      { id: 1, quantity: 3 }
+      { id: 1, quantity: 3 },
+      { id: 2, quantity: 2 },
     ]
   },
   initStore () {

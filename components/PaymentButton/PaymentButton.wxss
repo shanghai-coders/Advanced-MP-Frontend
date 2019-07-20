@@ -1,0 +1,11 @@
+/* components/PaymentButton/PaymentButton.wxss */
+.button-container {
+    position: fixed;
+    width: 100%;
+    bottom: 40rpx;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

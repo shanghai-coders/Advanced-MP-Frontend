@@ -11,5 +11,7 @@ export default {
   orderTitle: "订单",
   sendOrder: "发货通知",
   totalPrice: "付款金额",
-  product: "商品"
+  product: "商品",
+  myCart: "我的购物车",
+  pay: "购买"
 }

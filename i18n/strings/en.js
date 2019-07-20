@@ -11,5 +11,7 @@ export default {
   orderTitle: "Orders",
   sendOrder: 'Send Order Notice',
   totalPrice: "Total Price",
-  product: "Product"
+  product: "Product",
+  myCart: "My Cart",
+  pay: "Pay"
 }
