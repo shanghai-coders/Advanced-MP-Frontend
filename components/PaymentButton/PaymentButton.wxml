@@ -1,6 +1,6 @@
 <!-- components/PaymentButton/PaymentButton.wxml -->
 <view class="button-container">
     <button class="weui-btn" style="width: 90%" type="primary" bindtap="pay">
-        {{strings[language].pay}}
+        {{totalPrice}} {{strings[language].pay}}
     </button>
 </view>

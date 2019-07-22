@@ -23,6 +23,7 @@
               <view class="product-price">{{ product.price }}{{ strings[language].rmb  }}</view>
               <ItemQuantity
                 productId="{{product.id}}"
+                productPrice="{{product.price}}"
                 cartItems="{{cartItems}}"
               />
             </view>

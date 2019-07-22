@@ -14,7 +14,7 @@
                             <view class="product-price">
                                 {{ product.price }}{{ strings[language].rmb  }}
                             </view>
-                            <ItemQuantity productId="{{product.id}}" cartItems="{{cartItems}}" allowChangeQuantity="{{false}}" />
+                            x<ItemQuantity productId="{{product.id}}" cartItems="{{cartItems}}" allowChangeQuantity="{{false}}" />
                         </view>
                     </view>
                 </view>
@@ -22,4 +22,4 @@
         </view>
     </view>
 </view>
-<PaymentButton />
+<PaymentButton products="{{products}}"/>

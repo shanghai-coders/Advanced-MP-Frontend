@@ -9,10 +9,7 @@ export default {
     code: null,
     strings: languageStrings,
     language: 'en',
-    cartItems: [
-      { id: 1, quantity: 3 },
-      { id: 2, quantity: 2 },
-    ]
+    cartItems: []
   },
   initStore () {
     this.initLanguage()
@@ -65,10 +62,10 @@ export default {
       console.log(e);
     }
   },
-  async updateQuantity (id, action) {
+  async updateQuantity (id, price, action) {
     const { cartItems } = this.data
     const existingIndex = cartItems.findIndex(i => i.id === id)
-    const item = existingIndex !== -1 ? cartItems[existingIndex] : { id, quantity: 0 }
+    const item = existingIndex !== -1 ? cartItems[existingIndex] : { id, quantity: 0, price }
     if (action === 'inc') {
       item.quantity += 1
     } else if (item.quantity > 0) {

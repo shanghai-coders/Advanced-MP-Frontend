@@ -6,6 +6,7 @@ Component({
   behaviors: [computedBehavior],
   properties: {
     productId: Number,
+    productPrice: Number,
     cartItems: {
       type: Array,
       value: []
@@ -27,8 +28,8 @@ Component({
   },
   methods: {
     updateQuantity ({ currentTarget: { dataset: { action } } }) {
-      const { productId } = this.data
-      store.updateQuantity(productId, action)
+      const { productId, productPrice } = this.data
+      store.updateQuantity(productId, productPrice, action)
     }
   }
 })

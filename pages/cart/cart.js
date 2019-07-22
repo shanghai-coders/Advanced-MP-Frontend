@@ -17,13 +17,24 @@ create(store, {
     const { data } = await request({
       url: `${apiUrl}/product/getMultiple/${ids}`
     })
-    return data
+    if(data) {
+      const products = cartItems.map(ci => {
+        let finalObj = {};
+        data.forEach(d => {
+          if(String(d.id) === String(ci.id)) {
+            finalObj = {...d, ...ci};
+          }
+        });
+        return finalObj;
+      });
+      return products;
+    }
+    return [];
   },
   async onShow () {
     store.showLoading()
     try {
       const products = await this.getProducts();
-      console.log(products);
       this.setData({
         products
       });

@@ -10,7 +10,8 @@ const methods = [
   'chooseVideo',
   'uploadFile',
   'saveImageToPhotosAlbum',
-  'getSystemInfo'
+  'getSystemInfo',
+  'requestPayment'
 ]
 
 const wxp = {}
