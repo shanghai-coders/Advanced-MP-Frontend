@@ -1,2 +1,13 @@
-<!--pages/thankyou/thankyou.wxml-->
-<text>pages/thankyou/thankyou.wxml</text>
+<view class="place-center">
+    <view class="info-container">
+        <view class="icon-box" style="text-align: center;">
+            <icon type="success" size="64"></icon>
+            <view class="icon-box__ctn">
+                <view class="icon-box__title">Payment Successful</view>
+            </view>
+        </view>
+        <button class="weui-btn" style="width: 90%" type="primary" bindtap="goHome">
+            Continue Shopping
+        </button>
+    </view>
+</view>

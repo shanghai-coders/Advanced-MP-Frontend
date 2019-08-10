@@ -30,29 +30,39 @@ create({
       store.showLoading();
       try {
         const { userData, products, totalPrice, totalQuantity } = this.data;
-        console.log(userData);
         if(userData.openId) {
 
-          // const { data } = await request({
-          //   url: `${apiUrl}/order/create`,
-          //   method: 'post',
-          //   data: {
-          //     "created_at": new Date().getTime(),
-          //     "open_id": userData.openId,
-          //     "totalPrice": totalPrice,
-          //     "totalQuantity": totalQuantity,
-          //     "status": "open",
-          //     products,
-          //   }
-          // });
+          const { data } = await request({
+            url: `${apiUrl}/order/create`,
+            method: 'post',
+            data: {
+              "created_at": new Date().getTime(),
+              "open_id": userData.openId,
+              "totalPrice": totalPrice,
+              "totalQuantity": totalQuantity,
+              "status": "open",
+              products,
+            }
+          });
 
-          // const result = await requestPayment(data);
-          // console.log({ result });
-          // if(result.errMsg === 'requestPayment:ok') {
-          //   // Redirect to thank you page
-          // }
+          const result = await requestPayment(data);
+          console.log({ result });
+          if(result.errMsg === 'requestPayment:ok') {
+            // Clear cart item
+            this.update({
+              cartItems: []
+            });
+
+            // Redirect to thank you page
+            wx.navigateTo({
+              url: '/pages/thankyou/thankyou'
+            });
+          }
           
-          // return;
+          return;
+
+          
+
         }
         this.update({
           userData: {},

@@ -1,1 +1,11 @@
 /* pages/thankyou/thankyou.wxss */
+.place-center { 
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-container {
+    width: 100%;
+}

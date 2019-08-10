@@ -1,6 +1,6 @@
 <!-- components/PaymentButton/PaymentButton.wxml -->
 <view class="button-container">
-    <button class="weui-btn" style="width: 90%" type="primary" bindtap="pay">
+    <button class="weui-btn" style="width: 90%" type="primary" bindtap="pay" disabled="{{totalQuantity <= 0}}">
         {{totalPrice}} {{strings[language].pay}}
     </button>
 </view>
