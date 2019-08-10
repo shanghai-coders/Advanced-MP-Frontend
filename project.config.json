@@ -52,7 +52,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -80,6 +80,12 @@
 					"name": "Cart",
 					"pathName": "pages/cart/cart",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "Thank You",
+					"pathName": "pages/thankyou/thankyou",
 					"scene": null
 				}
 			]

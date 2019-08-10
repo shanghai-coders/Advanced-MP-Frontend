@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/profile/profile",
     "pages/cart/cart",
-    "pages/warehouse/warehouse"
+    "pages/warehouse/warehouse",
+    "pages/thankyou/thankyou"
   ],
   "usingComponents": {
     "ItemQuantity": "components/ItemQuantity/ItemQuantity"
