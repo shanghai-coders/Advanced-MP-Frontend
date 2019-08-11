@@ -39,7 +39,7 @@ create(store, {
         url: `${apiUrl}/wechat/send-message`,
         method: 'post',
         data: {
-          open_id: order.receipt.open_id,
+          open_id: order.open_id,
           form_id: formId,
           order_id: order.id
         }
