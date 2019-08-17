@@ -30,23 +30,5 @@ create(store, {
     } finally {
       wx.hideLoading()
     }
-  },
-  async sendNotification({ detail }) {
-    const { formId, target: { dataset: { order }} } = detail;
-    // send open_id, form_id and order id
-    try {
-      const { data } = await request({
-        url: `${apiUrl}/wechat/send-message`,
-        method: 'post',
-        data: {
-          open_id: order.receipt.open_id,
-          form_id: formId,
-          order_id: order.id
-        }
-      });
-      console.log(data);
-    } catch(e) {
-      console.log(e);
-    }
   }
 })

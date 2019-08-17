@@ -18,9 +18,6 @@
                 </view>
             </view>
             <view class="weui-form-preview__ft">
-              <form bindsubmit="sendNotification" report-submit class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">
-                <button form-type="submit" type="primary" data-order="{{order}}">{{strings[language].sendOrder}}</button>
-              </form>
             </view>
         </view>
     </view>
