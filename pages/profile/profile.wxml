@@ -35,7 +35,7 @@
               <view class="weui-cell__bd weui-cell_primary">
                 <view>Phone Number: {{phoneNumber}}</view>
               </view>
-              <view class="weui-cell__hd">
+              <view class="weui-cell__hd" catchtap="login">
                 <button class="weui-btn mini-btn" type="primary" size="mini" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
                   Get
                 </button>

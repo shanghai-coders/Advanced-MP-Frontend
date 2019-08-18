@@ -13,6 +13,7 @@ create(store, {
     strings: null,
     loggedIn: null,
     userData: null,
+    code: null,
     phoneNumber: '',
     readableLanguages: {
       en: "English",
@@ -52,12 +53,18 @@ create(store, {
       }
     }
   },
+  async login() {
+    const { code } = await wxp.login();
+    this.setData({
+      code
+    });
+  },
   async getPhoneNumber({ detail }) {
     const { encryptedData, iv } = detail;
 
     try {
-      // const { code } = store.data;
-      const { code } = await wxp.login();
+      const { code } = this.data;
+      // const { code } = await wxp.login();
       const { data } = await wxp.request({
         url: `${apiUrl}/wechat/login?code=${code}`, method: 'post', data: {
           encryptedData,
