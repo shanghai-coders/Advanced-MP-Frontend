@@ -20,8 +20,8 @@ export default {
     const language = await getStoredOrPhoneLanguage()
     await this.setLanguage(language)
   },
-  async setLanguage (language = 'en') {
-    await this.update({ language })
+  setLanguage (language = 'en') {
+    this.update({ language })
     this.setNavbarTitle()
     this.setTabBar()
     setStoredLanguage(language)
