@@ -9,25 +9,13 @@ import { apiUrl } from '../../utils/config';
 create(store, {
   data: {
     // From store
-    language: null,
-    strings: null,
     loggedIn: null,
     userData: null,
     code: null,
-    phoneNumber: '',
-    readableLanguages: {
-      en: "English",
-      zh: "中文"
-    }
+    phoneNumber: ''
   },
   onLoad(options) {
     console.log(store.data)
-  },
-  changeLanguage () {
-    const { language } = this.data
-    const availableLanguages = ['en', 'zh']
-    const newLanguage = availableLanguages.filter(l => l !== language)[0]
-    store.setLanguage(newLanguage)
   },
   async getUserInfo({ detail }) {
     const { userInfo, encryptedData, iv } = detail;

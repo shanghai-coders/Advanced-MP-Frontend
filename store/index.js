@@ -1,6 +1,4 @@
 // store/index.js
-import languageStrings from '../i18n/index'
-import { getStoredOrPhoneLanguage, setStoredLanguage } from '../services/language'
 import auth from '../services/auth'
 export default {
   data: {
@@ -8,40 +6,11 @@ export default {
     userId: 1,
     userData: {},
     code: null,
-    strings: languageStrings,
-    language: 'en',
     cartItems: []
   },
   initStore () {
-    this.initLanguage()
     this.getStoredUserData();
     this.getCode();
-  },
-  async initLanguage () {
-    const language = await getStoredOrPhoneLanguage()
-    await this.setLanguage(language)
-  },
-  setLanguage (language = 'en') {
-    this.update({ language })
-    this.setNavbarTitle()
-    this.setTabBar()
-    setStoredLanguage(language)
-  },
-  setNavbarTitle () {
-    const { strings, language } = this.data
-    wx.setNavigationBarTitle({
-      title: strings[language].navbarTitle
-    })
-  },
-  setTabBar () {
-    const { strings, language } = this.data
-    const tabBarItems = ['home', 'cart', 'profile']
-    tabBarItems.forEach((text, index) => {
-      wx.setTabBarItem({
-        index,
-        text: strings[language].tabbar[text]
-      })
-    })
   },
   async getStoredUserData() {
     const userData = await auth.getUserData();
@@ -100,11 +69,5 @@ export default {
         cartItems: [...cartItems].filter(i => i.id !== id)
       })
     }
-  },
-  async showLoading () {
-    const { language, strings } = this.data
-    wx.showLoading({
-      title: strings[language].loading
-    })
   }
 }

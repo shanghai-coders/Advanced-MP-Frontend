@@ -18,20 +18,7 @@
       <view class="weui-panel__bd">
         <view class="weui-media-box weui-media-box_small-appmsg">
           <view class="weui-cells weui-cells_in-small-appmsg">
-            <view class="weui-cell weui-cell_access" bindtap="changeLanguage">
-              <view class="weui-cell__bd weui-cell_primary">
-                <view>Language / 语言: {{ readableLanguages[language] }}</view>
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-    <view class="weui-panel">
-      <view class="weui-panel__bd">
-        <view class="weui-media-box weui-media-box_small-appmsg">
-          <view class="weui-cells weui-cells_in-small-appmsg">
-            <view class="weui-cell weui-cell_access" bindtap="changeLanguage">
+            <view class="weui-cell weui-cell_access">
               <view class="weui-cell__bd weui-cell_primary">
                 <view>Phone Number: {{phoneNumber}}</view>
               </view>

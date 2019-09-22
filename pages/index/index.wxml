@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="page">
   <view class="weui-panel weui-panel_access">
-    <view class="weui-panel__hd">{{ strings[language].hotProducts }}</view>
+    <view class="weui-panel__hd">Hot Products</view>
     <view class="weui-panel__bd">
       <block
         wx:for="{{products}}"
@@ -18,9 +18,9 @@
             />
           </view>
           <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">{{ product['name_' + language] }}</view>
+            <view class="weui-media-box__title">{{ product.name_en }}</view>
             <view class="description-wrapper">
-              <view class="product-price">{{ product.price }}{{ strings[language].rmb  }}</view>
+              <view class="product-price">{{ product.price }} RMB</view>
               <ItemQuantity
                 productId="{{product.id}}"
                 productPrice="{{product.price}}"
@@ -33,9 +33,3 @@
     </view>
   </view>
 </view>
-
-<CartButton />
-
-<official-account
-  style="position:fixed;bottom:0;left:0;right:0;z-index:99999999;"
-/>
