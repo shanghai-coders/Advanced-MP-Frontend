@@ -29,12 +29,5 @@ create(store, {
     } finally {
       wx.hideLoading()
     }
-  },
-  onShareAppMessage () {
-    const { userId } = store.data
-    return {
-      title: 'Advanced MP',
-      path: `/pages/index/index?sharer_id=${userId}`
-    }
   }
 })

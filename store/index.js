@@ -5,7 +5,6 @@ import auth from '../services/auth'
 export default {
   data: {
     loggedIn: null,
-    userId: 1,
     userData: {},
     code: null,
     strings: languageStrings,
@@ -46,29 +45,11 @@ export default {
   async getStoredUserData() {
     const userData = await auth.getUserData();
     if(userData) {
-      this.sendShareData();
       this.update({
         userData,
         loggedIn: true
       });
       return
-    }
-  },
-  async sendShareData () {
-    const { query } = wx.getLaunchOptionsSync()
-    if (query.sharer_id) {
-      const data = {
-        sharer_id: query.sharer_id,
-        opener_id: this.data.userId
-      }
-      console.log(data)
-      wx.request({
-        url: 'your-backend-analytics-url',
-        data,
-        complete: (res) => {
-          console.log(res)
-        }
-      })
     }
   },
   async getCode() {
