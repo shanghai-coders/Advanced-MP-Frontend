@@ -31,9 +31,7 @@
 	},
 	"isGameTourist": false,
 	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {
-		"qywx_simulator_plugin": "1.2.0"
-	},
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -49,6 +47,10 @@
 		},
 		"game": {
 			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
 			"list": []
 		},
 		"miniprogram": {
@@ -86,7 +88,22 @@
 					"id": -1,
 					"name": "Thank You",
 					"pathName": "pages/thankyou/thankyou",
+					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "Open From Share Link",
+					"pathName": "pages/index/index",
+					"query": "sharer_id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "Open from QR, show official account",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": 1047
 				}
 			]
 		}

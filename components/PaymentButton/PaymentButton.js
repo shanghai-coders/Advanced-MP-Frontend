@@ -20,8 +20,7 @@ create({
     },
     totalPrice() {
       const { cartItems } = this.data
-      console.log(cartItems)
-      return cartItems.reduce((acc, curr) => acc + ( curr.quantity * curr.price), 0)
+      return cartItems.reduce((acc, curr) => acc + (curr.quantity * curr.price), 0)
     }
   },
   methods: {
