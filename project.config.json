@@ -23,17 +23,15 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.2",
-	"appid": "wxc3c8dd24d5a53b8d",
+	"libVersion": "2.10.1",
+	"appid": "wx01835dedff13a4dc",
 	"projectname": "Advanced%20MP",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
 	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {
-		"qywx_simulator_plugin": "1.2.0"
-	},
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
