@@ -44,6 +44,7 @@ export default {
   },
   async getStoredUserData() {
     const userData = await auth.getUserData();
+    console.log(userData)
     if(userData) {
       this.update({
         userData,

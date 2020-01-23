@@ -18,6 +18,9 @@
                         {{ language === 'en' ? product.name_en :  product.name_zh}} ¥{{product.price}} x {{product.quantity}}
                     </view>
                 </view>
+                <button class="weui-btn" style="width: 90%" type="primary" bindtap="sendMessage">
+                    Send Message
+                </button>
             </view>
             <view class="weui-form-preview__ft"></view>
         </view>

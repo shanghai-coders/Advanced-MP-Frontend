@@ -25,7 +25,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.10.1",
 	"appid": "wx01835dedff13a4dc",
-	"projectname": "Advanced%20MP",
+	"projectname": "Advanced-MP-Frontend",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -49,20 +49,17 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
-			"current": 3,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
 					"name": "Profile",
 					"pathName": "pages/profile/profile",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "Login",
-					"pathName": "pages/login/login",
 					"query": "",
 					"scene": null
 				},
